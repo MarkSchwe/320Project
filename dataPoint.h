@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-
 class data{
     private:
     double date = 0;
