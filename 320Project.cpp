@@ -9,7 +9,7 @@ int main(){
     srand(time(0));
 vector<data> d;
 ifstream file;
-file.open("TestFile3.dat");
+file.open("FileOut.dat");
 double t1,t2;
 while(!file.eof()){
     file >> t1;
@@ -17,11 +17,11 @@ while(!file.eof()){
 d.push_back(data(t1,t2));
 }
 file.close();
-/*
+
 for(int i = 0; i < d.size(); i++){
     cout << d[i] << endl;
 }
-*/
+
 datavg avg;
 avg.setavgs(d);
 cout << avg << endl;
