@@ -11,22 +11,13 @@ double atzero;
 public:
 
 void setavgs(vector<data> &d){
-    vector<double> v1,v2;
-for(int i = 0; i < d.size(); i++){
-    v1.push_back(d[i].getinstance());
-}
-for(int i = 0; i < d.size(); i++){
-    v2.push_back(d[i].getdate());
-}
 double meanInst,meanDate;
-for(int i = 0; i < v1.size(); i++){
-meanInst += v1[i];
+for(int i = 0; i < d.size(); i++){
+meanInst += d[i].getinstance();
+meanDate += d[i].getdate();
 }
-for(int i = 0; i < v2.size(); i++){
-meanDate += v2[i];
-}
-meanInst = meanInst/v1.size();
-meanDate = meanDate/v2.size();
+meanInst = meanInst/d.size();
+meanDate = meanDate/d.size();
 double sumSq, SumY;
 for(int i = 0; i < d.size(); i++){
     sumSq += (d[i].getdate()-meanDate)*(d[i].getdate()-meanDate);
@@ -37,7 +28,6 @@ for(int i = 0; i < d.size(); i++){
 averagefunction = SumY/sumSq;
 atzero = meanInst - (averagefunction * meanDate);
 }
-
 double avgfunc(){
 return averagefunction;
 }
