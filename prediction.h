@@ -16,7 +16,7 @@ atzer = dat.getZero();
 }
 
 void predict(double yrs,vector<data> d){
-pred = ((d[d.size()-1].getdate()+yrs) * function) + atzer;
+pred = (yrs * function) + atzer;
 years = yrs;
 }
 
